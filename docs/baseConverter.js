@@ -45,8 +45,6 @@ function decToBase(number, base) {
 function convert() {
 	var number = document.getElementById('number').value;
 	var fromBase = parseInt(document.getElementById('fromBase').value);
-	console.log(typeof fromBase);
-	console.log(!fromBase);
 	var toBase = parseInt(document.getElementById('toBase').value);
 
 	if (fromBase>=2 && fromBase <= 64 && toBase >= 2 && toBase <= 64) {
