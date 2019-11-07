@@ -23,8 +23,7 @@ function decToBase(number, base) {
 	}
 	
 	result = characterList[(number%base)] + result;	
-	number = Math.floor(number/base);
-
+	
 	return result;
 }
 
@@ -40,10 +39,10 @@ function convert() {
 			return;
 		}
 	}
-	if (fromBase>=2 && fromBase <= 64 && toBase >= 2 && toBase <= 64) {
-		document.getElementById('converted').innerHTML = number + " in base " + fromBase + " gives " + decToBase(baseToDec(number, fromBase), toBase) + " in base " + toBase;
+	if (fromBase<2 || fromBase > 64 || toBase < 2 || toBase > 64) {
+		document.getElementById('converted').innerHTML = "Bases can only be numbers between 2 and 64";
 	}
 	else {
-		document.getElementById('converted').innerHTML = "Bases can only be numbers between 2 and 64";
+		document.getElementById('converted').innerHTML = number + " in base " + fromBase + " gives " + decToBase(baseToDec(number, fromBase), toBase) + " in base " + toBase;
 	}
 }
